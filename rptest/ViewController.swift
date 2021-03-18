@@ -6,11 +6,19 @@
 //
 
 import UIKit
+import WebKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var webKit: WKWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let test = "https://razorpay.com/demo/"
+        let testURL = URL.init(string: test)!
+        let request = URLRequest(url: testURL)
+        self.webKit.load(request)
         // Do any additional setup after loading the view.
     }
 
